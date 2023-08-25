@@ -1,0 +1,24 @@
+<h1>crud_app</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Pages</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for crud_app in object_list %}
+    <tr>
+    <td>{{ crud_app.name }}</td>
+    <td>{{ crud_app.pages }}</td>
+    <td><a href="{% url "book_view" crud_app.id %}">view</a></td>
+    <td><a href="{% url "book_edit" crud_app.id %}">edit</a></td>
+    <td><a href="{% url "book_delete" crud_app.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
